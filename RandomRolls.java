@@ -26,11 +26,8 @@ public class RandomRolls {
 		int[] outComeArr = new int[21];
 
 		int idx = 0;// variable is for holding the indexes of the arrays.
-
+		//-------------------------------------------------------------------------------
 	
-		//--------------------- Method Behavior---------------------------
-		// --------------------------------------------------------------
-
 		// For Loop to add randomly generated numbers to the ArrayList object "rdmList"
 		// adjust the condition to the size of the sample (1000, 10000).
 		for (idx = 0; idx < 1000; idx++) {
@@ -56,15 +53,18 @@ public class RandomRolls {
 		}
 
 		idx = 0;
+		double probPercent = 0.0;
 		//This for loop is used just to print the quantity of each of the outcomes of the d20
 		for (int i : outComeArr) {
-
+			
+			//this expression is used in printing the probability in percent form
+			probPercent = (double)i / rdmList.size();
+			
 			if (idx != 0)
-				System.out.println("Dice Value: " + idx + "...Qty: " + i + "...Probability: " + i + "/" + rdmList.size());
+				System.out.println("Dice Value: " + idx + "...Qty: " + i + "...P(X)frac: " + i + "/" + rdmList.size() + "...P(X)deci: " + probPercent);
 
 			idx++;
 		}
 
 	}// main
-
 }// RandomRolls
